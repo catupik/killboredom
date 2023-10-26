@@ -27,7 +27,7 @@ function App() {
       </div>
 
       <div className="advice">
-        <div className="container">
+        <div className="btn">
           <button onClick={getAdvice}>kill the boredom</button>
         </div>
         <div className="container">

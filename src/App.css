@@ -13,11 +13,10 @@ video {
     justify-content: center;
     margin-bottom: 50px;
   }
-  .container-btn {
+  .btn {
     display: flex;
     justify-content: center;
-    position: fixed;
-    width: 40;
+    
   }
 
   .advice{
@@ -37,6 +36,7 @@ video {
     background-color:  rgba(80, 45, 32, 0.813);
     padding: 10px;
     margin: 15px;
+    font-weight: lighter;
   }
 
   button{
@@ -53,11 +53,14 @@ video {
 
   @media all and (max-width:768px){
     button{
-      width: 50%;
-      font-size: 20px;
-      font-weight: lighter;
+      width: 40%;
+      font-size: 15px;
+      
     }
     h2{
-      font-size: 20px;
+      font-size: 15px;
+    }
+    .container{
+      margin-bottom: 70px;
     }
   }
