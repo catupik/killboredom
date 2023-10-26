@@ -1,5 +1,3 @@
-import { act } from "react-dom/test-utils";
-
 function Advice({activity}){
     return(
         <div className="container">
