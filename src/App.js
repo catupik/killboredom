@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import video from './video.mp4'
+import Advice from './Advice';
 import './App.css';
 
 function App() {
+
+  const [myAdvice, setMyAdvice] = useState('');
+
+  useEffect(()=>{
+    getAdvice();
+  }, [])
+
+  const getAdvice = async()=> {
+    const response = await fetch('http://www.boredapi.com/api/activity/');
+    const data = await response.json();
+    setMyAdvice(data);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <video playsInline autoPlay muted loop>
+        <source src={video} type='video/mp4'></source>
+        </video>
+      </div>
+
+      <div className="advice">
+        <div className='container'>
+        <button onClick={getAdvice}>kill the boredom</button>
+        </div>
+      <Advice className="container"
+      activity={myAdvice.activity}
+      />
+      </div>
+
     </div>
+
+
   );
 }
 
