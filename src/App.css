@@ -53,7 +53,7 @@ video {
 
   @media all and (max-width:768px){
     button{
-      width: 40%;
+      width: 50%;
       font-size: 20px;
       
     }
