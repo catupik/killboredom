@@ -54,13 +54,13 @@ video {
   @media all and (max-width:768px){
     button{
       width: 40%;
-      font-size: 15px;
+      font-size: 20px;
       
     }
     h2{
       font-size: 15px;
     }
     .container{
-      margin-bottom: 70px;
+      margin-bottom: 150px;
     }
   }
