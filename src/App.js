@@ -12,9 +12,14 @@ function App() {
   }, [])
 
   const getAdvice = async()=> {
-    const response = await fetch('http://www.boredapi.com/api/activity/');
-    const data = await response.json();
-    setMyAdvice(data);
+    try{
+      const response = await fetch(`https://www.boredapi.com/api/activity/`);
+      const data = await response.json();
+      setMyAdvice(data);
+    } catch(error){
+      console.error('Couldnt get data, error')
+    }
+   
   }
   return (
     <div className="App">
@@ -29,7 +34,7 @@ function App() {
         <button onClick={getAdvice}>kill the boredom</button>
         </div>
       <Advice className="container"
-      activity={myAdvice.activity}
+      activity={myAdvice.activity && myAdvice}
       />
       </div>
 
